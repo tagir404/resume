@@ -1,7 +1,7 @@
 import type { Skill } from '@/modules/types'
 import iconHtml from '@/assets/icons/html.png'
 import iconCss from '@/assets/icons/css.png'
-import iconSass from '@/assets/icons/sass.png'
+import iconSass from '@/assets/icons/sass.svg'
 import iconTailwind from '@/assets/icons/tailwind.svg'
 import iconJs from '@/assets/icons/js.svg'
 import iconTs from '@/assets/icons/typescript.svg'
