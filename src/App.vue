@@ -16,7 +16,7 @@ import { contacts } from '@/modules/contacts'
                     <p class="text-xl text-justify">Мой путь в веб разработке начался в 2021 году, тогда я стал брать первые заказы для <span class="whitespace-nowrap">HTML-верстальщиков</span> на фрилансе. Поработав так около полугода я решил найти работу постабильнее и так попал на стажировку в компанию <a href="https://procontext.ru/" target="_blank">ПроКонтекст</a>, в которой проработал два года на позиции Фронтенд-разработчика.</p>
                 </section>
                 <section class="animate__animated animate__fadeInLeft animate__delay-2s">
-                    <h3 class="text-3xl mb-4">Технологии:</h3>
+                    <h3 class="text-3xl mb-4">Мой стек:</h3>
                     <ul class="grid grid-rows-4 grid-flow-col gap-3 sm:grid-rows-6">
                         <li
                             class="text-xl flex items-center gap-3"
