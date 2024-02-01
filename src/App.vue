@@ -4,7 +4,7 @@ import { contacts } from '@/modules/contacts'
 </script>
 
 <template>
-    <div class="min-h-screen flex flex-col justify-center bg-sky-100">
+    <div class="min-h-screen flex flex-col justify-center bg-sky-100 overflow-hidden">
         <main class="max-w-screen-xl mx-auto p-8">
             <section class="flex flex-col gap-5 text-center mb-16 animate__animated animate__fadeInDown">
                 <h1 class="font-bold text-7xl">Тагир Сулаев</h1>
