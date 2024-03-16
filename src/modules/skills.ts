@@ -8,9 +8,11 @@ import iconTs from '@/assets/icons/typescript.svg'
 import iconVue from '@/assets/icons/vue.svg'
 import iconRouter from '@/assets/icons/vue-router.png'
 import iconPinia from '@/assets/icons/pinia.svg'
+import iconNuxt from '@/assets/icons/nuxt.svg'
 import iconVite from '@/assets/icons/vite.svg'
 import iconEslint from '@/assets/icons/eslint.svg'
 import iconGit from '@/assets/icons/git.svg'
+import iconPrettier from '@/assets/icons/prettier.svg'
 
 export const skills: Skill[] = [
     {
@@ -50,15 +52,23 @@ export const skills: Skill[] = [
         icon: iconPinia
     },
     {
+        name: 'Nuxt',
+        icon: iconNuxt
+    },
+    {
         name: 'Vite',
         icon: iconVite
+    },
+    {
+        name: 'Git',
+        icon: iconGit
     },
     {
         name: 'ESLint',
         icon: iconEslint
     },
     {
-        name: 'Git',
-        icon: iconGit
-    },
+        name: 'Prettier',
+        icon: iconPrettier
+    }
 ]
