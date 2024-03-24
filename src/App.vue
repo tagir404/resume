@@ -1,65 +1,82 @@
 <script setup lang="ts">
+import { ref, computed } from 'vue'
 import { skills } from '@/modules/skills'
 import { contacts } from '@/modules/contacts'
+import { langContent } from '@/modules/data'
+import IconBase from './components/IconBase.vue'
+
+const lang = ref<'ru' | 'en'>('ru')
+// const darkMode = ref<boolean>(false)
+
+const textContent = computed(() => langContent[lang.value])
+
+function changeLang() {
+    lang.value === 'ru' ? (lang.value = 'en') : (lang.value = 'ru')
+}
 </script>
 
 <template>
     <div class="min-h-screen flex flex-col justify-center bg-sky-100 overflow-hidden">
-        <main class="max-w-screen-xl mx-auto p-8">
+        <header class="flex gap-5 p-2 fixed top-0 left-0">
+            <p
+                class="flex items-center cursor-pointer select-none"
+                @click="changeLang"
+            >
+                <span class="material-symbols-outlined text-4xl"> language </span>
+                <span class="text-xl">{{ lang }}</span>
+            </p>
+
+            <!-- <span class="material-symbols-outlined text-4xl cursor-pointer"> dark_mode </span> -->
+        </header>
+        <main class="max-w-screen-xl mx-auto pt-14 pb-5 px-8 flex-1">
             <section
                 class="flex flex-col gap-5 text-center mb-16 animate__animated animate__fadeInDown"
             >
-                <h1 class="font-bold text-7xl">Тагир Сулаев</h1>
-                <h2 class="text-4xl">Фронтенд разработчик</h2>
+                <h1 class="font-bold text-7xl">{{ textContent.name }}</h1>
+                <h2 class="text-4xl">{{ textContent.speciality }}</h2>
             </section>
             <article class="font-comfortaa font-medium grid grid-cols-5 gap-8 lg:flex lg:flex-col">
                 <section class="col-span-full animate__animated animate__fadeIn animate__delay-1s">
-                    <h3 class="text-3xl mb-4">О моем опыте:</h3>
-                    <p class="text-xl text-justify">
-                        Мой путь в веб разработке начался в 2021 году, тогда я начал работать на
-                        фрилансе в качестве HTML-верстальщика. Поработав так около полугода, я решил
-                        найти работу постабильнее и после длительных поисков попал на стажировку в компанию
-                        <a
-                            href="https://procontext.ru/"
-                            target="_blank"
-                            >ПроКонтекст</a
-                        >, в которой проработал два года на позиции Фронтенд-разработчика.
-                    </p>
+                    <h3 class="text-3xl mb-4">{{ textContent.expirience.title }}</h3>
+                    <p
+                        class="text-xl text-justify"
+                        v-html="textContent.expirience.text"
+                    ></p>
                 </section>
                 <section class="col-span-3 animate__animated animate__fadeInLeft animate__delay-2s">
-                    <h3 class="text-3xl mb-4">Мой стек:</h3>
+                    <h3 class="text-3xl mb-4">{{ textContent.stackTitle }}</h3>
                     <ul class="grid grid-rows-4 grid-flow-col gap-3 sm:grid-rows-7">
                         <li
                             class="text-xl flex items-center gap-3"
                             v-for="skill in skills"
-                            :key="skill.name"
+                            :key="skill"
                         >
-                            <img
-                                class="w-[32px] animate__animated animate__bounce animate__delay-3s"
-                                :src="skill.icon"
-                                :alt="`Иконка технологии ${skill.name}`"
+                            <IconBase
+                                class="animate__animated animate__bounce animate__delay-3s"
+                                :icon="skill"
+                                :width="32"
                             />
-                            <p>{{ skill.name }}</p>
+                            <p>{{ skill }}</p>
                         </li>
                     </ul>
                 </section>
                 <section
                     class="col-span-2 animate__animated animate__fadeInRight animate__delay-2s"
                 >
-                    <h3 class="text-3xl mb-4">Контакты:</h3>
+                    <h3 class="text-3xl mb-4">{{ textContent.contacts.title }}</h3>
                     <ul class="flex flex-col gap-3">
                         <li
                             class="text-xl flex items-center gap-3"
-                            v-for="contact in contacts"
-                            :key="contact.title"
+                            v-for="(contact, key) in contacts"
+                            :key="key"
                         >
-                            <h4>{{ contact.title }}:</h4>
+                            <h4>{{ textContent.contacts.list[key] }}:</h4>
                             <a
                                 class="transition"
-                                :href="contact.link.href"
+                                :href="contact.href"
                                 target="_blank"
                             >
-                                {{ contact.link.text }}
+                                {{ contact.text }}
                             </a>
                         </li>
                     </ul>
