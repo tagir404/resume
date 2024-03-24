@@ -17,7 +17,7 @@ function changeLang() {
 
 <template>
     <div class="min-h-screen flex flex-col justify-center bg-sky-100 overflow-hidden">
-        <header class="flex gap-5 p-2 fixed top-0 left-0">
+        <header class="flex gap-5 p-2 fixed top-0 left-0 bg-sky-100 w-full z-50 border-b-2 border-green-200">
             <p
                 class="flex items-center cursor-pointer select-none"
                 @click="changeLang"
@@ -28,7 +28,7 @@ function changeLang() {
 
             <!-- <span class="material-symbols-outlined text-4xl cursor-pointer"> dark_mode </span> -->
         </header>
-        <main class="max-w-screen-xl mx-auto pt-14 pb-5 px-8 flex-1">
+        <main class="max-w-screen-xl mx-auto pt-16 pb-5 px-8 flex-1">
             <section
                 class="flex flex-col gap-5 text-center mb-16 animate__animated animate__fadeInDown"
             >
