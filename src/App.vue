@@ -21,9 +21,9 @@ watch(darkMode, val => {
 </script>
 
 <template>
-    <div class="min-h-screen flex flex-col justify-center bg-sky-100 overflow-hidden text-slate-800 dark:bg-slate-900 dark:text-sky-50">
+    <div class="min-h-screen flex flex-col justify-center bg-sky-100 overflow-hidden text-slate-800 transition dark:bg-slate-900 dark:text-sky-50">
         <header
-            class="flex justify-end gap-5 py-2 px-8 fixed top-0 left-0 bg-sky-100 w-full z-50 border-b-2 border-green-200 dark:bg-slate-900 dark:text-sky-50"
+            class="flex justify-end gap-5 py-2 px-8 fixed top-0 left-0 bg-sky-100 w-full z-50 border-b-2 border-green-200 transition dark:bg-slate-900"
         >
             <p
                 class="flex items-center cursor-pointer select-none"
