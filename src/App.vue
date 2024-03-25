@@ -64,9 +64,8 @@ watch(darkMode, val => {
                             :key="skill"
                         >
                             <BaseIcon
-                                class="animate__animated animate__bounce animate__delay-3s"
+                                :animation="'animate__animated animate__bounce animate__delay-3s'"
                                 :icon="skill"
-                                :width="32"
                             />
                             <p>{{ skill }}</p>
                         </li>
