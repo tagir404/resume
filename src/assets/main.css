@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-    @apply text-slate-800;
     font-family: 'Philosopher', sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
