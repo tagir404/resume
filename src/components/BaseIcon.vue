@@ -12,6 +12,7 @@ import IconTailwind from '@/components/icons/IconTailwind.vue'
 import IconTypescript from '@/components/icons/IconTypescript.vue'
 import IconVite from '@/components/icons/IconVite.vue'
 import IconVue from '@/components/icons/IconVue.vue'
+import IconVueRouter from '@/components/icons/IconVueRouter.vue'
 
 import type { Skill } from '@/modules/types.ts'
 
@@ -73,7 +74,7 @@ const props = defineProps<{
         v-if="props.icon === 'Vue'"
         :class="`w-[32px] h-auto`"
     />
-    <IconVue
+    <IconVueRouter
         v-if="props.icon === 'Vue Router'"
         :class="`w-[32px] h-auto`"
     />

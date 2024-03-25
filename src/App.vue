@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import { skills } from '@/modules/skills'
 import { contacts } from '@/modules/contacts'
 import { langContent } from '@/modules/data'
-import IconBase from './components/IconBase.vue'
+import BaseIcon from './components/BaseIcon.vue'
 
 const lang = ref<'ru' | 'en'>('ru')
 // const darkMode = ref<boolean>(false)
@@ -51,7 +51,7 @@ function changeLang() {
                             v-for="skill in skills"
                             :key="skill"
                         >
-                            <IconBase
+                            <BaseIcon
                                 class="animate__animated animate__bounce animate__delay-3s"
                                 :icon="skill"
                                 :width="32"
