@@ -37,7 +37,7 @@ watch(darkMode, val => {
                 class="material-symbols-outlined text-4xl cursor-pointer select-none"
                 @click="darkMode = !darkMode"
             >
-                {{ darkMode ? 'light_mode' : 'dark_mode' }}
+                {{ darkMode ? 'dark_mode' : 'light_mode' }}
             </span>
         </header>
         <main class="max-w-screen-xl mx-auto pt-20 pb-5 px-8 flex-1">
