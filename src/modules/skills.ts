@@ -11,6 +11,7 @@ export const skills: Skill[] = [
     'Vue Router',
     'Pinia',
     'Nuxt',
+    'Vue I18n',
     'Vite',
     'Git',
     'ESLint',

@@ -9,6 +9,7 @@ type Skill =
     | 'Vue Router'
     | 'Pinia'
     | 'Nuxt'
+    | 'Vue I18n'
     | 'Vite'
     | 'Git'
     | 'ESLint'
@@ -16,38 +17,14 @@ type Skill =
 
 interface Contacts {
     phone: Contact
-    mail: Contact
+    email: Contact
     telegram: Contact
     address: Contact
 }
 
 interface Contact {
-    text: string
+    text: string | null
     href: string
 }
 
-interface LangOptions {
-    ru: LangOption
-    en: LangOption
-}
-
-interface LangOption {
-    name: string
-    speciality: string
-    stackTitle: string
-    expirience: {
-        title: string
-        text: string
-    },
-    contacts: {
-        title: string,
-        list: {
-            phone: string
-            mail: string
-            telegram: string
-            address: string
-        }
-    }
-}
-
-export type { Skill, Contacts, LangOptions }
+export type { Skill, Contacts }

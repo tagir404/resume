@@ -7,6 +7,7 @@ export default {
     ],
     theme: {
         screens: {
+            '3xl': '1920px',
             'xl': '1280px',
             'lg': {'max': '1023px'},
             'sm': {'max': '639px'}

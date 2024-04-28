@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
+import { ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { skills } from '@/modules/skills'
 import { contacts } from '@/modules/contacts'
-import { langContent } from '@/modules/data'
 import BaseIcon from './components/BaseIcon.vue'
 
-const lang = ref<'ru' | 'en'>('ru')
 const darkMode = ref<boolean>(false)
 
-const textContent = computed(() => langContent[lang.value])
+
+const { t, locale } = useI18n()
 
 function changeLang() {
-    lang.value === 'ru' ? (lang.value = 'en') : (lang.value = 'ru')
+    locale.value === 'ru' ? (locale.value = 'en') : (locale.value = 'ru')
 }
 
 watch(darkMode, val => {
@@ -30,7 +30,7 @@ watch(darkMode, val => {
                 @click="changeLang"
             >
                 <span class="material-symbols-outlined text-4xl"> language </span>
-                <span class="text-xl">{{ lang }}</span>
+                <span class="text-xl">{{ locale }}</span>
             </p>
 
             <span
@@ -40,24 +40,24 @@ watch(darkMode, val => {
                 {{ darkMode ? 'dark_mode' : 'light_mode' }}
             </span>
         </header>
-        <main class="max-w-screen-xl mx-auto pt-20 pb-5 px-8 flex-1">
+        <main class="max-w-7xl mx-auto pt-20 pb-5 px-8 flex-1">
             <section
                 class="flex flex-col gap-5 text-center mb-12 animate__animated animate__fadeInDown"
             >
-                <h1 class="font-bold text-7xl">{{ textContent.name }}</h1>
-                <h2 class="text-4xl">{{ textContent.speciality }}</h2>
+                <h1 class="font-bold text-7xl">{{ t('name') }}</h1>
+                <h2 class="text-4xl">{{ t('speciality') }}</h2>
             </section>
             <article class="font-comfortaa font-medium grid grid-cols-5 gap-8 lg:flex lg:flex-col">
                 <section class="col-span-full animate__animated animate__fadeIn animate__delay-1s">
-                    <h3 class="text-3xl mb-4">{{ textContent.expirience.title }}</h3>
+                    <h3 class="text-3xl mb-4">{{ t('expirience.title') }}</h3>
                     <p
                         class="text-xl text-justify"
-                        v-html="textContent.expirience.text"
+                        v-html="t('expirience.text')"
                     ></p>
                 </section>
                 <section class="col-span-3 animate__animated animate__fadeInLeft animate__delay-2s">
-                    <h3 class="text-3xl mb-4">{{ textContent.stackTitle }}</h3>
-                    <ul class="grid grid-rows-4 grid-flow-col gap-2 sm:grid-rows-7">
+                    <h3 class="text-3xl mb-4">{{ t('stackTitle') }}</h3>
+                    <ul class="grid grid-rows-4 grid-flow-col gap-2 sm:grid-rows-none sm:grid-flow-row sm:grid-cols-2 sm:auto-rows-fr">
                         <li
                             class="text-xl flex items-center gap-3"
                             v-for="skill in skills"
@@ -74,20 +74,20 @@ watch(darkMode, val => {
                 <section
                     class="col-span-2 animate__animated animate__fadeInRight animate__delay-2s"
                 >
-                    <h3 class="text-3xl mb-4">{{ textContent.contacts.title }}</h3>
+                    <h3 class="text-3xl mb-4">{{ t('contacts.title') }}</h3>
                     <ul class="flex flex-col gap-3">
                         <li
                             class="text-xl flex items-center gap-3"
                             v-for="(contact, key) in contacts"
                             :key="key"
                         >
-                            <h4>{{ textContent.contacts.list[key] }}:</h4>
+                            <h4>{{ t(`contacts.${key}.title`) }}:</h4>
                             <a
                                 class="transition"
                                 :href="contact.href"
                                 target="_blank"
                             >
-                                {{ contact.text }}
+                                {{ contact.text ?? t(`contacts.${key}.text`) }}
                             </a>
                         </li>
                     </ul>
