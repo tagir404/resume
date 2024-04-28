@@ -7,7 +7,13 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   base: '/resume/',
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag.startsWith('swiper-')
+        }
+      }
+    }),
   ],
   resolve: {
     alias: {
