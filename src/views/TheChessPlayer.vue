@@ -11,16 +11,19 @@ const boardOptions = {
 }
 
 onMounted(() => {
+    // @ts-ignore: Unreachable code error
     Chessboard('favorite-move', {
         ...boardOptions,
         position: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR',
     })
 
+    // @ts-ignore: Unreachable code error
     Chessboard('favorite-opening-white', {
         ...boardOptions,
         position: 'r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R',
     })
 
+    // @ts-ignore: Unreachable code error
     Chessboard('favorite-opening-black', {
         ...boardOptions,
         position: 'rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR',
