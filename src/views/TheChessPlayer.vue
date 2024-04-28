@@ -74,7 +74,7 @@ onMounted(() => {
         <section class="flex flex-col justify-between">
             <h3 class="text-2xl mb-4 flex flex-col">{{ t('chessplayer.favoriteMove') }} <b>e4</b></h3>
             <div
-                class="w-full"
+                class="w-full self-center sm:w-[calc(100%-4px)]"
                 id="favorite-move"
             ></div>
         </section>
@@ -84,7 +84,7 @@ onMounted(() => {
                 <b>{{ t('chessplayer.favoriteOpening.white.text') }}</b>
             </h3>
             <div
-                class="w-full"
+                class="w-full self-center sm:w-[calc(100%-4px)]"
                 id="favorite-opening-white"
             ></div>
         </section>
@@ -94,7 +94,7 @@ onMounted(() => {
                 <b>{{ t('chessplayer.favoriteOpening.black.text') }}</b>
             </h3>
             <div
-                class="w-full"
+                class="w-full self-center sm:w-[calc(100%-4px)]"
                 id="favorite-opening-black"
             ></div>
         </section>
