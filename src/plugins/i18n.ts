@@ -36,14 +36,14 @@ export default createI18n({
                     title: 'О моем опыте:',
                     text: 'Я начал играть в шахматы в 2017 году. С этого времени я успел наиграть более 17 тысяч партий в блиц (3+0) на платформе <a href="https://chess.com" target="_blank" >Chess.com</a>, выучить пару дебютов и достичь неплохого уровня игры. Мой максимальный рейтинг: 1850.'
                 },
-                favoriteMove: 'Мой любимый первый ход:',
+                favoriteMove: 'Любимый первый ход:',
                 favoriteOpening: {
                     white: {
-                        title: 'Мой любимый дебют за белых:',
+                        title: 'Любимый дебют за белых:',
                         text: 'Итальянская партия'
                     },
                     black: {
-                        title: 'Мой любимый дебют за черных:',
+                        title: 'Любимый дебют за черных:',
                         text: 'Защита Каро – Канн'
                     }
                 }
@@ -81,14 +81,14 @@ export default createI18n({
                     title: 'About my experience:',
                     text: 'I started playing chess in 2017. Since that time, I have managed to play more than 17 thousand games of blitz (3+0) on the <a href="https://chess.com" target="_blank" >Chess.com</a> platform, learn a couple of openings and reach a good level of play. My maximum rating: 1850.'
                 },
-                favoriteMove: 'My favorite first move:',
+                favoriteMove: 'Favorite first move:',
                 favoriteOpening: {
                     white: {
-                        title: 'My favorite opening for white:',
+                        title: 'Favorite opening for white:',
                         text: 'Italian Game'
                     },
                     black: {
-                        title: 'My favorite opening for black:',
+                        title: 'Favorite opening for black:',
                         text: 'Caro – Kann Defence'
                     }
                 }
