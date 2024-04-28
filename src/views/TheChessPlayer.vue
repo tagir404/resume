@@ -4,9 +4,37 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-const basePath = import.meta.env.BASE_URL
 const boardOptions = {
-    pieceTheme: `${basePath}src/assets/chesspieces/{piece}.svg`,
+    pieceTheme: (piece: string) => {
+        let piecePath = ''
+        switch (piece) {
+            case 'wK': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/4/42/Chess_klt' 
+            break
+            case 'bK': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Chess_kdt' 
+            break
+            case 'wQ': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/1/15/Chess_qlt' 
+            break
+            case 'bQ': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_qdt' 
+            break
+            case 'wR': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/7/72/Chess_rlt' 
+            break
+            case 'bR': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt' 
+            break
+            case 'wB': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt' 
+            break
+            case 'bB': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/9/98/Chess_bdt' 
+            break
+            case 'wN': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/7/70/Chess_nlt'
+            break
+            case 'bN': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Chess_ndt'
+            break
+            case 'wP': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt'
+            break
+            case 'bP': piecePath = 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Chess_pdt'
+        }
+
+        return `${piecePath}45.svg`
+    },
     showNotation: false
 }
 
