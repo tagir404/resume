@@ -36,6 +36,7 @@ export default createI18n({
                     title: 'О моем опыте:',
                     text: 'Я начал играть в шахматы в 2017 году. С этого времени я успел наиграть более 17 тысяч партий в блиц (3+0) на платформе <a href="https://chess.com" target="_blank" >Chess.com</a>, выучить пару дебютов и достичь неплохого уровня игры. Мой максимальный рейтинг: 1850.'
                 },
+                accountLinkText: 'Ссылка на мой аккаунт:',
                 favoriteMove: 'Любимый первый ход:',
                 favoriteOpening: {
                     white: {
@@ -81,6 +82,7 @@ export default createI18n({
                     title: 'About my experience:',
                     text: 'I started playing chess in 2017. Since that time, I have managed to play more than 17 thousand games of blitz (3+0) on the <a href="https://chess.com" target="_blank" >Chess.com</a> platform, learn a couple of openings and reach a good level of play. My maximum rating: 1850.'
                 },
+                accountLinkText: 'Link to my account:',
                 favoriteMove: 'Favorite first move:',
                 favoriteOpening: {
                     white: {
