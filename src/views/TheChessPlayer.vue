@@ -1,52 +1,13 @@
 <script setup lang="ts">
+import { getPiecePath } from '@/modules/utils'
 import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
 const boardOptions = {
-    pieceTheme: (piece: string) => {
-        let piecePath = ''
-        switch (piece) {
-            case 'wK':
-                piecePath = '4/42/Chess_klt'
-                break
-            case 'bK':
-                piecePath = 'f/f0/Chess_kdt'
-                break
-            case 'wQ':
-                piecePath = '1/15/Chess_qlt'
-                break
-            case 'bQ':
-                piecePath = '4/47/Chess_qdt'
-                break
-            case 'wR':
-                piecePath = '7/72/Chess_rlt'
-                break
-            case 'bR':
-                piecePath = 'f/ff/Chess_rdt'
-                break
-            case 'wB':
-                piecePath = 'b/b1/Chess_blt'
-                break
-            case 'bB':
-                piecePath = '9/98/Chess_bdt'
-                break
-            case 'wN':
-                piecePath = '7/70/Chess_nlt'
-                break
-            case 'bN':
-                piecePath = 'e/ef/Chess_ndt'
-                break
-            case 'wP':
-                piecePath = '4/45/Chess_plt'
-                break
-            case 'bP':
-                piecePath = 'c/c7/Chess_pdt'
-        }
-
-        return `https://upload.wikimedia.org/wikipedia/commons/${piecePath}45.svg`
-    },
+    pieceTheme: (piece: string) =>
+        `https://upload.wikimedia.org/wikipedia/commons/${getPiecePath(piece)}45.svg`,
     showNotation: false
 }
 
@@ -80,7 +41,8 @@ onMounted(() => {
                 <span
                     class="text-xl text-justify"
                     v-html="t('chessplayer.experience.text')"
-                ></span> <span
+                ></span>
+                <span
                     >{{ t('chessplayer.accountLinkText') }}
                     <a
                         href="https://www.chess.com/member/tagirsulaev"

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { skills } from '@/modules/skills'
 import { contacts } from '@/modules/contacts'
-import BaseIcon from '@/components/BaseIcon.vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -24,13 +23,13 @@ const { t } = useI18n()
                 <li
                     class="text-xl flex items-center gap-3"
                     v-for="skill in skills"
-                    :key="skill"
+                    :key="skill.name"
                 >
-                    <BaseIcon
-                        :animation="'animate__animated animate__bounce animate__delay-3s'"
-                        :icon="skill"
+                    <component
+                        :is="skill.icon"
+                        class="w-8 sm:w-10 h-auto animate__animated animate__bounce animate__delay-3s"
                     />
-                    <p>{{ skill }}</p>
+                    <p>{{ skill.name }}</p>
                 </li>
             </ul>
         </section>
