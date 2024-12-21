@@ -41,8 +41,7 @@ onMounted(() => {
                 <span
                     class="text-xl text-justify"
                     v-html="t('chessplayer.experience.text')"
-                ></span>
-                <span
+                ></span> <span
                     >{{ t('chessplayer.accountLinkText') }}
                     <a
                         href="https://www.chess.com/member/tagirsulaev"
