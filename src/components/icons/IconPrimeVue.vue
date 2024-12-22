@@ -52,3 +52,9 @@
         ></path>
     </svg>
 </template>
+
+<style scoped>
+.dark svg path {
+    fill: #fff;
+}
+</style>

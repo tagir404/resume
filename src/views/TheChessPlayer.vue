@@ -37,19 +37,10 @@ onMounted(() => {
     <article class="font-comfortaa font-medium grid grid-cols-3 gap-8 lg:flex lg:flex-col">
         <section class="col-span-full animate__animated animate__fadeIn animate__delay-1s">
             <h3 class="text-3xl mb-4">{{ t('chessplayer.experience.title') }}</h3>
-            <p class="text-xl text-justify">
-                <span
-                    class="text-xl text-justify"
-                    v-html="t('chessplayer.experience.text')"
-                ></span> <span
-                    >{{ t('chessplayer.accountLinkText') }}
-                    <a
-                        href="https://www.chess.com/member/tagirsulaev"
-                        target="_blank"
-                        >TagirSulaev</a
-                    ></span
-                >
-            </p>
+            <p 
+                class="text-xl text-justify" 
+                v-html="t('chessplayer.experience.text')"
+            ></p>
         </section>
         <section class="flex flex-col justify-between">
             <h3 class="text-3xl mb-4 flex flex-col gap-2">
